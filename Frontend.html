@@ -194,6 +194,13 @@
   }
 }
 
+.modal-backdrop.show:nth-of-type(2) {
+  z-index: 1056; /* raise second modal */
+}
+#registerModal {
+  z-index: 1057;
+}
+
 </style>
 
 <!-- SIGN IN MODAL -->
@@ -543,10 +550,14 @@
       </ul>
 
       <div class="text-center mt-4">
-        <a href="#services" class="btn btn-success px-4 py-2 rounded-pill shadow-sm" style="font-weight: 700; font-size: 2rem;">
+        <button class="btn btn-success px-4 py-2 rounded-pill shadow-sm"
+                style="font-weight: 700; font-size: 2rem;"
+                data-bs-toggle="modal" data-bs-target="#signInModal">
           Explore Our Services
-        </a>
+        </button>
       </div>
+      
+      
     </div>
   </div>
 </section>
@@ -635,6 +646,17 @@
     });
   });
 
+  function openBothModals() {
+    const signInModal = new bootstrap.Modal(document.getElementById('signInModal'));
+    const registerModal = new bootstrap.Modal(document.getElementById('registerModal'));
+
+    signInModal.show();
+
+    // Add slight delay before showing the second modal
+    setTimeout(() => {
+      registerModal.show();
+    }, 500); // adjust delay if needed
+  }
   </script>
   
   
