@@ -240,7 +240,8 @@
 
   <h3 class="mb-4 text-center text-white"><u>Sign In</u></h3>
 
-  <form id="signInForm" class="row g-3 needs-validation" novalidate>
+  <form id="signInForm" class="row g-3 needs-validation" novalidate onsubmit="redirectToDashboard(event)">
+
     <div class="col-md-12">
       <label for="signinEmail" class="form-label text-white" style="font-size: 25px;">Email</label>
       <input type="email" class="form-control bg-dark text-white border-light" id="signinEmail" required>
@@ -308,7 +309,8 @@
 
           <h3 class="mb-4 text-center text-white"><u>Register</u></h3>
 
-          <form id="registerForm" class="row g-3 needs-validation" novalidate>
+          <<form id="registerForm" class="row g-3 needs-validation" novalidate onsubmit="redirectToDashboard(event)">
+
             <div class="col-md-6">
               <label class="form-label text-white" style="font-size: 25px;">Full Name</label>
               <input type="text" class="form-control bg-dark text-white border-light" required>
@@ -373,7 +375,7 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid px-4">
-    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
       <img src="CodeHashers logo.jpeg" alt="CodeHashers Logo" style="height: 80px; width: auto;">
       <span>CodeHashers</span>
     </a>
@@ -656,6 +658,12 @@
     setTimeout(() => {
       registerModal.show();
     }, 500); // adjust delay if needed
+  }
+
+  function redirectToDashboard(event) {
+    event.preventDefault(); // Prevent actual form submission
+    // Optional: Add form validation check here if needed
+    window.location.href = "dashboard.html";
   }
   </script>
   
