@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>View Profile</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"/>
+  <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+  <!-- MD5 (for Gravatar) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.min.js"></script>
+
+  <style>
+    body.light-mode { background-color: white; color: black; }
+    body.dark-mode { background-color: #000; color: white; }
+  
+    .card { box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+  
+    .default-avatar {
+      font-size: 5rem;
+      color: #aaa;
+    }
+  
+    .moving-text {
+  font-family: 'Winky Sans', sans-serif; /* 👈 Changed from 'Oleo Script' to 'Winky Sans' */
+  font-size: 2rem;
+  animation: scroll-left 10s linear infinite;
+  white-space: nowrap;
+  position: absolute;
+}
+
+  
+    .moving-text-container {
+      overflow: hidden;
+      position: relative;
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+  
+    @keyframes scroll-left {
+      0% { left: 100%; }
+      100% { left: -100%; }
+    }
+  
+    .logo-text {
+      font-family: 'Winky Sans', sans-serif;
+      font-size: 2rem;
+    }
+  
+    .navbar-lora {
+      font-family: 'Lora', serif;
+      font-weight: 700;
+    }
+  
+    .navbar-lora .nav-link,
+    .navbar-lora .dropdown-item,
+    .navbar-lora .btn {
+      font-weight: 700;
+    }
+  
+    /* DARK MODE STYLES */
+    body.dark-mode .navbar,
+    body.dark-mode .dropdown-menu {
+      background-color: #000 !important;
+    }
+  
+    body.dark-mode .navbar .nav-link,
+    body.dark-mode .navbar .navbar-brand,
+    body.dark-mode .navbar .dropdown-item,
+    body.dark-mode .navbar .btn {
+      color: white !important;
+    }
+  
+    body.dark-mode .portfolio-heading,
+    body.dark-mode #noItemsPlaceholder p,
+    body.dark-mode .card-title,
+    body.dark-mode .card-subtitle,
+    body.dark-mode .card-text,
+    body.dark-mode label {
+      color: white !important;
+    }
+  
+    body.dark-mode .card {
+      background-color: #111 !important;
+      border: 1px solid #333;
+    }
+  
+    body.dark-mode .form-control {
+      background-color: #222 !important;
+      border-color: #444;
+      color: white;
+    }
+  
+    body.dark-mode .form-control::placeholder {
+      color: #bbb;
+    }
+  
+    body.dark-mode #noItemsPlaceholder img {
+      filter: brightness(0) invert(1); /* white image */
+    }
+  
+    body.dark-mode footer {
+      background-color: #000 !important;
+      color: white;
+    }
+  
+    body.dark-mode footer p {
+      color: white !important;
+    }
+  </style>
+  
+</head>
+<body>
+
+<!-- NAVBAR 1 -->
+<nav class="navbar navbar-expand-lg text fs-5 first-navbar bg-light">
+  <div class="container-fluid px-4 d-flex justify-content-between align-items-center">
+
+    <!-- Left: Logo -->
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+      <img src="CodeHashers logo.jpeg" alt="CodeHashers Logo" style="height: 60px; width: auto;">
+      <span class="logo-text fw-bold">CodeHashers</span>
+    </a>
+
+    <!-- Center: Nav Links -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+      <ul class="navbar-nav align-items-center gap-4">
+        <li class="nav-item">
+          <a class="nav-link fw-bold" href="#">Browse</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link fw-bold dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Manage</a>
+          <ul class="dropdown-menu p-3 fs-6" style="width: 300px;">
+            <li><a class="dropdown-item fw-bold" href="#">🩷 Favorites</a></li>
+            <li><a class="dropdown-item fw-bold" href="#">My Hires</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item fw-bold" href="#">Project Updates</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold d-flex align-items-center gap-1" href="#">
+            <span class="material-symbols-outlined" style="font-size: 20px;">notifications</span>
+            Notifications
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right: Action Buttons & Profile -->
+    <div class="d-flex align-items-center gap-3">
+      <a class="btn btn-primary px-3 py-1 text-nowrap fw-bold" href="#" style="font-size: 0.95rem;">Post Your Project</a>
+
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+          <span class="material-symbols-outlined" style="font-size: 32px;">account_circle</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end fs-6 custom-dropdown">
+          <li class="text-center">
+            <a class="dropdown-item fw-bold" href="#" style="font-size: 1.1rem;">Account</a>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item fw-bold" href="view_profile.html">View Profile</a></li>
+          <li><a class="dropdown-item fw-bold" href="#">Settings</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger fw-bold" href="index.html">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Toggler -->
+    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+
+<!-- Transparent Separator -->
+<hr style="height: 2px; background: rgba(0, 0, 0, 0.1); border: none; margin: 0;">
+
+<!-- SCROLLING HEADER -->
+<nav class="navbar navbar-expand-lg bg-black shadow-sm w-100">
+  <div class="container-fluid px-4">
+    <div class="moving-text-container w-100">
+      <div class="moving-text text-white fw-bold">MY PROFILE</div>
+    </div>
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <button class="btn btn-outline-light border-0" id="theme-toggle">
+          <span id="theme-icon">🌙</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<br>
+
+<!-- PROFILE CARD -->
+<div class="container my-5">
+  <div class="card p-4 mb-4 profile-card text-center">
+    <div class="mb-3">
+      <img id="profilePhoto" class="rounded-circle d-none" style="width: 120px; height: 120px;" />
+      <span id="defaultIcon" class="material-symbols-outlined default-avatar">person</span>
+    </div>
+    <h3 id="displayName" class="fw-bold mb-1"></h3>
+    <p class="text-muted mb-1" id="displayEmail"></p>
+    <p class="text-muted" id="joinDate"></p>
+    <div class="text-end mt-3">
+      <a href="#" class="btn btn-outline-primary">Edit Profile</a>
+    </div>
+  </div>
+
+  <!-- Portfolio Heading -->
+
+<h3 class="mb-3 mt-5 border-bottom pb-2 portfolio-heading" style="font-family: 'Permanent Marker', cursive; font-size: 2.5rem;">
+  Portfolio
+</h3>
+<div class="text-end mb-3">
+  <button class="btn btn-outline-primary" onclick="toggleForm()">Manage Portfolio</button>
+</div>
+
+<!-- Add Portfolio Form -->
+<div id="portfolioForm" class="card p-3 mb-4 d-none" style="font-family: 'Lilita One', cursive; font-size: 2rem;">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <input type="text" id="portfolioTitle" class="form-control" placeholder="Project Title" />
+    </div>
+    <div class="col-md-6">
+      <input type="text" id="portfolioCategory" class="form-control" placeholder="Category" />
+    </div>
+    <div class="col-md-12">
+      <textarea id="portfolioDescription" class="form-control" placeholder="Description"></textarea>
+    </div>
+    <div class="col-12 d-flex justify-content-between">
+      <button class="btn btn-danger" onclick="clearLastPortfolioItem()">Delete Last</button>
+      <button class="btn btn-success" onclick="addPortfolioItem()">Add Item</button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- No Items Placeholder -->
+<div class="text-center my-5" id="noItemsPlaceholder" style="font-family: 'Lilita One', cursive;">
+  <img src="https://www.f-cdn.com/assets/main/en/assets/portfolio/illustration.svg" style="width: 100px;" />
+  <p class="text-muted">No portfolio items have been added yet</p>
+</div>
+
+<!-- Portfolio Items Container -->
+<div class="row" id="portfolioItems" style="font-family: 'Lilita One', cursive;"></div>
+<hr>
+<!-- FOOTER -->
+<footer class="bg-white text-dark py-5" style="font-family: 'Lilita One', cursive;">
+  <div class="container text-center">
+    <p class="mb-1" style="font-size: 2.2rem;">© 2025 CodeHashers. All rights reserved.</p>
+    <p class="text-secondary" style="font-size: 1.6rem;">Made with ❤️ by CodeHashers Team</p>
+  </div>
+</footer>
+
+<script>
+  // THEME TOGGLE
+  const toggleButton = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('light-mode');
+    themeIcon.textContent = document.body.classList.contains('light-mode') ? '🌙' : '☀️';
+  });
+
+  // USER DATA
+  /* const userData = JSON.parse(localStorage.getItem("userData"));
+
+  if (!userData || !userData.email || !userData.name) {
+    window.location.href = "index.html";
+  } else {
+    window.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("displayName").textContent = userData.name;
+      document.getElementById("displayEmail").textContent = userData.email;
+
+      const joinedDate = new Date(userData.joinedAt).toLocaleDateString("en-US", {
+        year: "numeric", month: "long", day: "numeric"
+      });
+      document.getElementById("joinDate").textContent = `Joined on ${joinedDate}`;
+
+      // Gravatar setup
+      const gravatarUrl = "https://www.gravatar.com/avatar/" + md5(userData.email.trim().toLowerCase()) + "?d=404";
+      const profilePhoto = document.getElementById("profilePhoto");
+      const defaultIcon = document.getElementById("defaultIcon");
+
+      fetch(gravatarUrl).then(res => {
+        if (res.ok) {
+          profilePhoto.src = gravatarUrl;
+          profilePhoto.classList.remove("d-none");
+          defaultIcon.style.display = "none";
+        }
+      });
+
+      loadPortfolioItems();
+    });
+  } */
+
+  // TEMPORARY: Always load portfolio
+  window.addEventListener("DOMContentLoaded", () => {
+    loadPortfolioItems();
+  });
+
+  function toggleForm() {
+    const form = document.getElementById("portfolioForm");
+    form.classList.toggle("d-none");
+  }
+
+  function loadPortfolioItems() {
+    const items = JSON.parse(localStorage.getItem("portfolioItems")) || [];
+    const container = document.getElementById("portfolioItems");
+    const placeholder = document.getElementById("noItemsPlaceholder");
+    container.innerHTML = "";
+
+    if (items.length === 0) {
+      placeholder.style.display = "block";
+      return;
+    }
+
+    placeholder.style.display = "none";
+
+    items.forEach((item, index) => {
+      const col = document.createElement("div");
+      col.className = "col-md-6 mb-4";
+
+      col.innerHTML = `
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">${item.title}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">${item.category}</h6>
+            <p class="card-text">${item.description}</p>
+            <button class="btn btn-sm btn-danger" onclick="deletePortfolioItem(${index})">Delete</button>
+          </div>
+        </div>
+      `;
+      container.appendChild(col);
+    });
+  }
+
+  function addPortfolioItem() {
+    const title = document.getElementById("portfolioTitle").value.trim();
+    const category = document.getElementById("portfolioCategory").value.trim();
+    const description = document.getElementById("portfolioDescription").value.trim();
+
+    if (!title || !category || !description) return alert("Fill all fields!");
+
+    const item = { title, category, description };
+    const items = JSON.parse(localStorage.getItem("portfolioItems")) || [];
+    items.push(item);
+    localStorage.setItem("portfolioItems", JSON.stringify(items));
+
+    // Clear form inputs
+    document.getElementById("portfolioTitle").value = "";
+    document.getElementById("portfolioCategory").value = "";
+    document.getElementById("portfolioDescription").value = "";
+
+    toggleForm();
+    loadPortfolioItems();
+  }
+
+  function deletePortfolioItem(index) {
+    const items = JSON.parse(localStorage.getItem("portfolioItems")) || [];
+    items.splice(index, 1);
+    localStorage.setItem("portfolioItems", JSON.stringify(items));
+    loadPortfolioItems();
+  }
+
+  function clearLastPortfolioItem() {
+    const items = JSON.parse(localStorage.getItem("portfolioItems")) || [];
+    if (items.length > 0) {
+      items.pop();
+      localStorage.setItem("portfolioItems", JSON.stringify(items));
+      loadPortfolioItems();
+    } else {
+      alert("No items to delete!");
+    }
+  }
+</script>
+</body>
+</html>
