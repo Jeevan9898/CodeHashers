@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About CodeHashers Team</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<style>@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #001f3f, #002f4f);
+        background-size: 400% 400%;
+        animation: backgroundShift 5s ease infinite;
+        color: white;
+        text-align: center;
+    }
+    @keyframes backgroundShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+    h2, h3 {
+        font-family: 'Orbitron', sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #00f0ff; /* Cyber glow effect */
+    }
+    
+    
+    
+    header {
+        padding: 20px;
+        background-color: #161b22;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    }
+    
+    .team {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 50px;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .team-member {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+    
+    
+    .team-member {
+        background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+        backdrop-filter: blur(10px); /* Blurred background */
+        border-radius: 15px;
+        padding: 20px;
+        text-align: center;
+        width: 320px;
+        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .team-member:hover {
+        transform: scale(1.05);
+    }
+    
+    .team-member img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 4px solid rgba(255, 255, 255, 0.2);
+        transition: transform 0.5s ease-in-out, border-color 0.3s;
+        animation: floatImage 3s infinite ease-in-out;
+    }
+    
+    @keyframes floatImage {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+        100% { transform: translateY(0px); }
+    }
+    
+    .team-member img:hover {
+        border-color: #00f0ff;
+        box-shadow: 0 0 15px #00f0ff;
+        transform: scale(1.1);
+    }
+    .team-member {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 0.8s ease-in-out forwards;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .team-content {
+        padding: 20px;
+    }
+    
+    .team-content h2 {
+        margin: 10px 0;
+        font-size: 22px;
+    }
+    
+    .team-content p {
+        font-size: 16px;
+        color: #8b949e;
+    }
+    
+    .social-links {
+        margin-top: 15px;
+    }
+    
+    .social-links a {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 20px;
+        font-weight: bold;
+        background: linear-gradient(45deg, #00f0ff, #0066ff);
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.4s ease-in-out;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+    }
+    
+    .social-links a:hover {
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.8);
+        transform: scale(1.1);
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .section-title::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(45deg, #00f0ff, #0066ff);
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        transform: scaleX(0);
+        transition: transform 0.4s ease-in-out;
+    }
+    
+    .section-title:hover::after {
+        transform: scaleX(1);
+    }
+    
+    </style>
+<body>
+    <header>
+        <h1>Meet the CodeHashers Team</h1>
+        <p>Building the future of decentralized freelancing.</p>
+    </header>
+    
+    <section class="team">
+        <div class="team-member">
+            <img src="Jeevan.jpg" alt="CodeHashers Team" style="width: 50%; max-height: 200px; object-fit: cover;">
+            <div class="team-content">
+                <h2>Jeevan Yadav</h2>
+                <p>Hey, I’m Jeevan. Art helps me express myself and see the world from new perspectives.
+                   Along the way, I’ve had the opportunity to lead teams three times, which really helped me build confidence, communication skills, and the ability to bring people together toward a shared goal. I enjoy taking responsibility and finding creative solutions when challenges come up.</p>
+                <div class="social-links">
+                    <a href="https://github.com/Jeevan9898">GitHub</a>
+                    <a href="https://www.linkedin.com/in/jeevan-yadav-b664952b5/">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="team-member">
+            <img src="Ishank.jpg" alt="Ishank Kumar Kaushik" style="width: 50%; max-height: 200px; object-fit: cover;">
+            <div class="team-content">
+                <h2>Ishank Kumar Kaushik</h2>
+                    <p>Hey there! I'm a Computer Science and Engineering student and a core team member of CodeHashers, passionate about blockchain technology and web development.</p>
+                <div class="social-links">
+                    <a href="https://github.com/KAUSHIKISHANK">GitHub</a>
+                    <a href="https://www.linkedin.com/in/ishank-kaushik-5a698433b/">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="Parminder.jpg" alt="Parminder Singh" style="width: 50%; max-height: 200px; object-fit: cover;">
+            <div class="team-content">
+                <h2> Parminder Singh</h2>
+                    <p>Hello, my name is Parminder Singh, and I'm a first-year B.Tech student. I'm currently exploring the fascinating world of technology, with a particular interest in coding, cloud computing, and cybersecurity. I'm eager to learn more about these fields and how they're shaping our future. I also enjoy spending time alone to focus and delve deeper into these subjects.</p>
+                <div class="social-links">
+                    <a href="">GitHub</a>
+                    <a href="https://www.linkedin.com/in/parminder-singh-8360b334a/">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="Hooda.jpg" alt="Arun Hooda" style="width: 50%; max-height: 200px; object-fit: cover;">
+            <div class="team-content">
+                <h2> Arun Hooda </h2>
+                    <p></p>
+                <div class="social-links">
+                    <a href="">GitHub</a>
+                    <a href="">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more team members here -->
+    </section>
+    <sript>
+        document.addEventListener("DOMContentLoaded", function() {
+            const members = document.querySelectorAll(".team-member");
+        
+            members.forEach(member => {
+                member.addEventListener("mouseover", () => {
+                    member.style.boxShadow = "0 4px 15px rgba(88, 166, 255, 0.5)";
+                });
+        
+                member.addEventListener("mouseout", () => {
+                    member.style.boxShadow = "0 4px 8px rgba(255, 255, 255, 0.1)";
+                });
+            });
+        });        
+    </sript>
+</body>
+</html>
