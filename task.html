@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TasksList</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"/>
+  <style>
+         .combined-gradient {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg,
+   grey, white);
+  background-size: 400% 400%;
+  animation: combined-animate 18s ease-in-out infinite alternate;
+  color: white;
+  overflow: hidden;
+  padding: 2rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+@keyframes combined-animate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.dropend .dropdown-menu {
+    margin-left: 0.1rem;
+    margin-top: -0.5rem;
+  }
+  body {
+  background-color: #ffffff;
+  color: black;
+  padding: 40px;
+}
+
+    .card-custom {
+      background: linear-gradient(135deg, #0F172A 0%, #2563EB 20%, #8B5CF6 40%, #FDE68A 60%, #FCA5A5 75%, #F472B6 85%, #C084FC 100%);
+    }
+    .material-symbols-outlined {
+      vertical-align: middle;
+    }
+
+ /* Default light mode styles */
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+
+body.light-mode .navbar:first-of-type,
+body.light-mode .card,
+body.light-mode footer {
+  background-color: white;
+  color: black;
+}
+
+body.light-mode .navbar:first-of-type .nav-link,
+body.light-mode .navbar-brand span {
+  color: black !important;
+}
+
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #0F172A;
+  color: white;
+}
+
+body.dark-mode {
+  background-color: #000000;
+  color: white;
+}
+
+body.dark-mode .navbar:first-of-type,
+body.dark-mode .card,
+body.dark-mode footer {
+  background-color: #000000 !important;
+  color: white !important;
+}
+
+body.dark-mode .navbar:first-of-type .nav-link,
+body.dark-mode .navbar-brand span {
+  color: white !important;
+}
+
+/* Light mode */
+body.light-mode footer {
+  background-color: white;
+  color: black;
+}
+
+/* Dark mode */
+body.dark-mode footer {
+  background-color: #0F172A;
+  color: white;
+}
+/* Light mode muted text */
+body.light-mode .themed-muted {
+  color: #6c757d; /* Bootstrap's default muted color */
+}
+
+/* Dark mode muted text */
+body.dark-mode .themed-muted {
+  color: #bbbbbb; /* A lighter gray for contrast on black */
+}
+
+/* Light mode dropdown */
+body.light-mode .dropdown-menu {
+  background-color: white;
+  color: black;
+}
+
+body.light-mode .dropdown-menu .dropdown-item {
+  color: black;
+}
+
+body.light-mode .dropdown-menu .dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+/* Dark mode dropdown */
+body.dark-mode .dropdown-menu {
+  background-color: #1e293b;
+  color: white;
+  border: 1px solid #334155;
+}
+
+body.dark-mode .dropdown-menu .dropdown-item {
+  color: white;
+}
+
+body.dark-mode .dropdown-menu .dropdown-item:hover {
+  background-color: #334155;
+}
+.logo-text {
+    font-family: 'Winky Sans', sans-serif;
+    font-size: 2rem;
+  }
+
+  .navbar-lora {
+    font-family: 'Lora', serif;
+    font-weight: 700; /* Makes Lora bold */
+  }
+
+  .navbar-lora .nav-link,
+  .navbar-lora .dropdown-item,
+  .navbar-lora .btn {
+    font-weight: 700; /* Ensure links, dropdowns, and buttons are bold */
+  }
+
+  .carter-one-font {
+    font-family: 'Carter One', cursive;
+    font-size: 1.5rem;;
+  }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Lora', serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* LOGO TEXT */
+    .logo-text {
+      font-family: 'Winky Sans', sans-serif;
+      font-size: 2rem;
+    }
+
+    /* Light Mode */
+    body.light-mode {
+      background-color: white;
+      color: black;
+    }
+
+    body.light-mode .navbar:first-of-type,
+    body.light-mode .card,
+    body.light-mode footer {
+      background-color: white;
+      color: black;
+    }
+
+    body.light-mode .navbar:first-of-type .nav-link,
+    body.light-mode .navbar-brand span {
+      color: black !important;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #000000;
+      color: white;
+    }
+
+    body.dark-mode .navbar:first-of-type,
+    body.dark-mode .card,
+    body.dark-mode footer {
+      background-color: #000000 !important;
+      color: white !important;
+    }
+
+    body.dark-mode .navbar:first-of-type .nav-link,
+    body.dark-mode .navbar-brand span {
+      color: white !important;
+    }
+
+    /* Footer font */
+    footer {
+      font-family: 'Carter One', cursive;
+      text-align: center;
+      padding: 15px;
+      border-top: 1px solid #ddd;
+    }
+
+    body.dark-mode footer {
+      background-color: #0F172A;
+      color: white;
+    }
+
+    body.light-mode footer {
+      background-color: white;
+      color: black;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      width: 200px;
+      padding: 20px;
+      border-right: 1px solid #dee2e6;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    /* Sidebar Anchor Tag Styles */
+    body.light-mode .sidebar {
+      background-color: #f8f9fa;
+    }
+
+    body.light-mode .sidebar a {
+      color: black;
+      text-decoration: none;
+      display: block;
+      padding: 8px 10px;
+      border-radius: 4px;
+    }
+
+    body.light-mode .sidebar a:hover {
+      background-color: #e2e6ea;
+    }
+
+    body.dark-mode .sidebar {
+      background-color: #1e293b;
+      border-right: 1px solid #334155;
+    }
+
+    body.dark-mode .sidebar a {
+      color: white;
+      background-color: black;
+      text-decoration: none;
+      display: block;
+      padding: 8px 10px;
+      border-radius: 4px;
+    }
+
+    body.dark-mode .sidebar a:hover {
+      background-color: #333;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      padding: 30px;
+    }
+
+    .list-header h2 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .empty-state {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .empty-state img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    .empty-state button {
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+    }
+
+    /* Image toggle inversion for dark mode */
+    body.light-mode .empty-img {
+      filter: none;
+    }
+
+    body.dark-mode .empty-img {
+      filter: brightness(0) invert(1);
+    }
+
+    /* Navbar theme toggle button */
+    #theme-toggle {
+      font-size: 1.4rem;
+    }
+
+    .top-nav {
+      width: 100%;
+      padding: 10px 20px;
+      background-color: #f1f1f1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .top-nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Lora', serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* LOGO TEXT */
+    .logo-text {
+      font-family: 'Winky Sans', sans-serif;
+      font-size: 2rem;
+    }
+
+    /* Light Mode */
+    body.light-mode {
+      background-color: white;
+      color: black;
+    }
+
+    body.light-mode .navbar:first-of-type,
+    body.light-mode .card,
+    body.light-mode footer {
+      background-color: white;
+      color: black;
+    }
+
+    body.light-mode .navbar:first-of-type .nav-link,
+    body.light-mode .navbar-brand span {
+      color: black !important;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #000000;
+      color: white;
+    }
+
+    body.dark-mode .navbar:first-of-type,
+    body.dark-mode .card,
+    body.dark-mode footer {
+      background-color: #000000 !important;
+      color: white !important;
+    }
+
+    body.dark-mode .navbar:first-of-type .nav-link,
+    body.dark-mode .navbar-brand span {
+      color: white !important;
+    }
+
+    /* Footer font */
+    footer {
+      font-family: 'Carter One', cursive;
+      text-align: center;
+      padding: 15px;
+      border-top: 1px solid #ddd;
+    }
+
+    body.dark-mode footer {
+      background-color: #0F172A;
+      color: white;
+    }
+
+    body.light-mode footer {
+      background-color: white;
+      color: black;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      width: 200px;
+      padding: 20px;
+      border-right: 1px solid #dee2e6;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    /* Sidebar Anchor Tag Styles */
+    body.light-mode .sidebar {
+      background-color: #f8f9fa;
+    }
+
+    body.light-mode .sidebar a {
+      color: black;
+      text-decoration: none;
+      display: block;
+      padding: 8px 10px;
+      border-radius: 4px;
+    }
+
+    body.light-mode .sidebar a:hover {
+      background-color: #e2e6ea;
+    }
+
+    body.dark-mode .sidebar {
+      background-color: #1e293b;
+      border-right: 1px solid #334155;
+    }
+
+    body.dark-mode .sidebar a {
+      color: white;
+      background-color: black;
+      text-decoration: none;
+      display: block;
+      padding: 8px 10px;
+      border-radius: 4px;
+    }
+
+    body.dark-mode .sidebar a:hover {
+      background-color: #333;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      padding: 30px;
+    }
+
+    .list-header h2 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .empty-state {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .empty-state img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    .empty-state button {
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+    }
+
+    /* Image toggle inversion for dark mode */
+    body.light-mode .empty-img {
+      filter: none;
+    }
+
+    body.dark-mode .empty-img {
+      filter: brightness(0) invert(1);
+    }
+
+    /* Navbar theme toggle button */
+    #theme-toggle {
+      font-size: 1.4rem;
+    }
+
+    .top-nav {
+      width: 100%;
+      padding: 10px 20px;
+      background-color: #f1f1f1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .top-nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+
+<body class="light-mode">
+<!-- NAVBAR 1 -->
+<nav class="navbar navbar-expand-lg text fs-5 first-navbar">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+      <img src="CodeHashers logo.jpeg" alt="CodeHashers Logo" style="height: 60px; width: auto;">
+      <span class="logo-text">CodeHashers</span>
+    </a>
+  </div>
+
+  <div class="collapse navbar-collapse justify-content-end navbar-lora" id="navbarContent">
+    <ul class="navbar-nav align-items-center gap-3">
+      <li class="nav-item"><a class="nav-link" href="#">Browse</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Manage</a>
+        <ul class="dropdown-menu p-3 fs-6" style="width: 300px;">
+          <li><a class="dropdown-item fw-semibold" href="#">🩷 Favorites</a></li>
+          <li><a class="dropdown-item fw-semibold" href="#">My Hires</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item fw-semibold" href="#">Project Updates</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center gap-1" href="#">
+          <span class="material-symbols-outlined" style="font-size: 20px;">notifications</span> Notifications
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+          <span class="material-symbols-outlined" style="font-size: 32px;">account_circle</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end fs-6 custom-dropdown">
+          <li class="text-center"><a class="dropdown-item fw-semibold" href="#" style="font-size: 1.1rem;">Account</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="view_profile.html">View Profile</a></li>
+          <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="index.html">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- NAVBAR 2 -->
+<nav class="navbar navbar-expand-lg bg-black shadow-sm w-100 navbar-lora">
+  <div class="container-fluid px-4">
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent2">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarContent2">
+      <ul class="navbar-nav align-items-center justify-content-evenly w-100 gap-4 fs-5">
+        <li class="nav-item"><a class="nav-link text-white" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="lists.html">Lists</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="my_projects.html">My Projects</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="feedback.html">Feedback</a></li>
+        <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center gap-1" href="settings.html">
+              <span class="material-symbols-outlined" style="font-size: 40px;">settings</span>
+              Settings
+            </a>
+          </li>
+      </ul>
+
+      <!-- Theme Toggle Button -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <button class="btn btn-outline-light border-0" id="theme-toggle">
+            <span id="theme-icon">🌙</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br>
+
+<!-- Main Layout -->
+<!-- Main Layout -->
+<div class="d-flex" style="min-height: calc(100vh - 60px);">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h5><b>Lists</b></h5>
+      <hr>
+      <ul>
+        <li><a href="lists.html" style="font-weight: bold;">Favorites</a></li>
+        <li><a href="mylist.html" style="font-weight: bold;" >My Hires</a></li>
+        <li><a href="viewed.html" style="font-weight: bold;">Recently Viewed</a></li>
+        <li><a href="task.html" style="font-weight: bold;">TasksList</a></li>
+      </ul>
+    </div>
+  
+    <!-- TaskList Main Content -->
+    <div class="main-content w-100">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 id="tasklist-title">@username's tasklist</h4>
+        <div class="d-flex gap-2">
+          <button class="btn btn-sm btn-outline-primary" onclick="editTasklistName()">✏️</button>
+          <button class="btn btn-sm btn-outline-danger" onclick="deleteTasklist()">🗑️</button>
+          <button class="btn btn-sm btn-primary" onclick="addTask()">+ Add Task</button>
+        </div>
+      </div>
+  <hr>
+      <div id="task-container">
+        <div class="empty-state text-center" id="empty-state">
+          <img class="empty-img" src="https://cdn-icons-png.flaticon.com/512/5520/5520326.png" alt="Empty List" style="width:100px;">
+          <h5>No tasks yet</h5>
+          <p>Create tasks and assign them to people to help keep your team on track.</p>
+          <button class="btn btn-primary" onclick="addTask()">Create your first task</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<!-- Footer -->
+<footer class="py-5">
+  <div class="container text-center">
+    <p class="mb-1" style="font-size: 2.2rem; font-weight: 700;">© 2025 CodeHashers. All rights reserved.</p>
+    <p class="text-secondary" style="font-size: 1.6rem;">Made with ❤️ by CodeHashers Team</p>
+  </div>
+</footer>
+
+<!-- Theme Toggle Script -->
+<script>
+  const toggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
+  const themeIcon = document.getElementById('theme-icon');
+
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
+    themeIcon.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
+  });
+
+  // Load username from localStorage
+  const user = JSON.parse(localStorage.getItem("currentUser")) || { name: "username" };
+  const tasklistTitle = document.getElementById("tasklist-title");
+  tasklistTitle.textContent = `@${user.name}'s tasklist`;
+
+  // Load tasks from localStorage
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+  const taskContainer = document.getElementById("task-container");
+  const emptyState = document.getElementById("empty-state");
+
+  function renderTasks() {
+    taskContainer.innerHTML = "";
+    if (tasks.length === 0) {
+      taskContainer.appendChild(emptyState);
+      return;
+    }
+
+    const taskList = document.createElement("ul");
+    taskList.classList.add("list-group");
+
+    tasks.forEach((task, index) => {
+      const item = document.createElement("li");
+      item.className = "list-group-item d-flex justify-content-between align-items-center";
+      item.innerHTML = `
+        <span>${task}</span>
+        <div>
+          <button class="btn btn-sm btn-outline-success me-2" onclick="editTask(${index})">✏️</button>
+          <button class="btn btn-sm btn-outline-danger" onclick="deleteTask(${index})">🗑️</button>
+        </div>
+      `;
+      taskList.appendChild(item);
+    });
+
+    taskContainer.appendChild(taskList);
+  }
+
+  function addTask() {
+    const newTask = prompt("Enter new task:");
+    if (newTask) {
+      tasks.push(newTask);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      renderTasks();
+    }
+  }
+
+  function editTask(index) {
+    const updated = prompt("Edit task:", tasks[index]);
+    if (updated) {
+      tasks[index] = updated;
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      renderTasks();
+    }
+  }
+
+  function deleteTask(index) {
+    if (confirm("Delete this task?")) {
+      tasks.splice(index, 1);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      renderTasks();
+    }
+  }
+
+  function deleteTasklist() {
+    if (confirm("Delete entire tasklist?")) {
+      tasks = [];
+      localStorage.removeItem("tasks");
+      renderTasks();
+    }
+  }
+
+  function editTasklistName() {
+    const newName = prompt("Edit your tasklist name:", user.name);
+    if (newName) {
+      user.name = newName;
+      localStorage.setItem("currentUser", JSON.stringify(user));
+      tasklistTitle.textContent = `@${user.name}'s tasklist`;
+    }
+  }
+
+  renderTasks();
+</script>
+</body>
+</html>
