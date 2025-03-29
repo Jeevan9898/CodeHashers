@@ -14,6 +14,67 @@
   <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
 </head>
 <style>
+    /* Button */
+.feedback-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Modal */
+.feedback-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 60px;
+}
+
+.feedback-modal-content {
+  background-color: white;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.close-btn {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  float: right;
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
     .combined-gradient {
   height: 100%;
   width: 100%;
@@ -282,7 +343,7 @@ body.dark-mode .dropdown-menu .dropdown-item:hover {
           <li class="nav-item"><a class="nav-link text-white" href="dashboard.html">Dashboard</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="lists.html">Lists</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="my_projects.html">My Projects</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="feedback.html">Feedback</a></li>
           <li class="nav-item">
             <a class="nav-link text-white d-flex align-items-center gap-1" href="#">
               <span class="material-symbols-outlined" style="font-size: 40px;">work_update</span>
@@ -354,6 +415,18 @@ body.dark-mode .dropdown-menu .dropdown-item:hover {
             <img src="https://cdn-icons-png.flaticon.com/512/7486/7486066.png" alt="Empty" />
             <h6>No past work</h6>
             <p>Completed freelancer jobs will be shown here.</p>
+            <button class="feedback-btn">Give Feedback</button>
+
+            <!-- Popup Modal -->
+            <div class="feedback-modal" id="feedbackModal">
+              <div class="feedback-modal-content">
+                <span class="close-btn" id="closeModal">&times;</span>
+                <h3>Provide Your Feedback</h3>
+                <textarea id="feedbackText" rows="4" placeholder="Write your feedback..."></textarea>
+                <button id="submitFeedback">Submit Feedback</button>
+              </div>
+            </div>
+              
           </div>
         </div>
       </div>
@@ -460,7 +533,17 @@ document.addEventListener("DOMContentLoaded", function () {
             ? '<button class="btn btn-primary btn-sm accept-project">Accept Project</button>'
             : type === "current"
               ? '<button class="btn btn-success btn-sm complete-project">Mark as Completed</button>'
-              : '<span class="badge bg-secondary">Completed</span>'
+              : `
+                  <span class="badge bg-secondary">Completed</span>
+                  <div class="rating-stars mb-2">
+                    <span class="star" data-value="1">☆</span>
+                    <span class="star" data-value="2">☆</span>
+                    <span class="star" data-value="3">☆</span>
+                    <span class="star" data-value="4">☆</span>
+                    <span class="star" data-value="5">☆</span>
+                  </div>
+                  <button class="btn btn-primary btn-sm rate-project">Rate Project</button>
+                `
         }
       </div>
     `;
@@ -565,9 +648,81 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Rate Project logic for completed projects
+  pastWorkContainer.addEventListener("click", function (e) {
+    if (e.target.classList.contains("rate-project")) {
+      const projectCard = e.target.closest(".card");
+      const title = projectCard.querySelector(".card-title").textContent;
+
+      let selectedRating = 0;
+
+      // Handle star click event
+      document.querySelectorAll('.star').forEach(star => {
+        star.addEventListener('click', function () {
+          selectedRating = this.getAttribute('data-value');
+          // highlight stars
+          document.querySelectorAll('.star').forEach(s => {
+            s.textContent = s.getAttribute('data-value') <= selectedRating ? '⭐' : '☆';
+          });
+        });
+      });
+
+      // Save the rating to localStorage
+      const feedbackData = {
+        project: title,
+        rating: selectedRating
+      };
+
+      let allFeedback = JSON.parse(localStorage.getItem('feedbacks')) || [];
+      allFeedback.push(feedbackData);
+      localStorage.setItem('feedbacks', JSON.stringify(allFeedback));
+
+      alert("Thank you for your rating!");
+
+      // Optionally, hide the rating buttons after submission
+      e.target.setAttribute('disabled', 'true');
+    }
+  });
+
   renderAvailableProjects();
 });
+// Modal functionality
+const feedbackBtn = document.querySelector('.feedback-btn');
+const feedbackModal = document.getElementById('feedbackModal');
+const closeModal = document.getElementById('closeModal');
+const submitFeedback = document.getElementById('submitFeedback');
+const feedbackText = document.getElementById('feedbackText');
+
+// Open modal when 'Give Feedback' button is clicked
+feedbackBtn.addEventListener('click', () => {
+  feedbackModal.style.display = 'block';
+});
+
+// Close modal when the close button is clicked
+closeModal.addEventListener('click', () => {
+  feedbackModal.style.display = 'none';
+});
+
+// Close modal if the user clicks anywhere outside the modal content
+window.addEventListener('click', (event) => {
+  if (event.target === feedbackModal) {
+    feedbackModal.style.display = 'none';
+  }
+});
+
+// Submit feedback and store it in localStorage
+submitFeedback.addEventListener('click', () => {
+  const feedback = feedbackText.value.trim();
+  if (feedback) {
+    localStorage.setItem('userFeedback', feedback);
+    window.location.href = 'feedback.html'; // Redirect to feedback page
+  } else {
+    alert('Please write your feedback before submitting.');
+  }
+});
   </script>
+
+
   
 </body>
 </html>
