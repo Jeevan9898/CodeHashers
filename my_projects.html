@@ -792,22 +792,17 @@ body.dark-mode .dropdown-menu .dropdown-item:hover {
 
 
   <script>
-   const toggleButton = document.getElementById('theme-toggle');
+ // 🌗 Theme Toggle
+const toggleButton = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 
-// Start in light mode
 document.body.classList.add('light-mode');
 themeIcon.textContent = '🌙';
 
 toggleButton.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
   document.body.classList.toggle('light-mode');
-
-  if (document.body.classList.contains('light-mode')) {
-    themeIcon.textContent = '🌙';
-  } else {
-    themeIcon.textContent = '☀️';
-  }
+  themeIcon.textContent = document.body.classList.contains('light-mode') ? '🌙' : '☀️';
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -820,26 +815,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const pastWorkContainer = document.getElementById("pastWorkContainer");
 
   const defaultProjects = [
-    {
-      title: "Responsive Web Portfolio",
-      description: "Create a responsive personal portfolio using HTML, CSS, and JavaScript."
-    },
-    {
-      title: "E-Commerce Website Fixes",
-      description: "Fix product filtering and cart issues in an existing MERN stack project."
-    },
-    {
-      title: "YouTube Video Editing",
-      description: "Edit a series of 3 videos with background music, text effects, and transitions."
-    },
-    {
-      title: "Logo Animation",
-      description: "Animate a company logo for use in video intros and social media reels."
-    },
-    {
-      title: "Landing Page for SaaS",
-      description: "Design and develop a landing page for a startup’s SaaS product using Tailwind CSS."
-    }
+    { title: "Responsive Web Portfolio", description: "Create a responsive portfolio using HTML, CSS, and JavaScript." },
+    { title: "E-Commerce Fixes", description: "Fix product filtering and cart issues in an existing MERN stack project." },
+    { title: "YouTube Video Editing", description: "Edit 3 videos with background music, text effects, and transitions." },
+    { title: "Logo Animation", description: "Animate a company logo for use in video intros and social media reels." },
+    { title: "Landing Page for SaaS", description: "Design and develop a landing page for a startup’s SaaS product using Tailwind CSS." }
   ];
 
   function createProjectCard(title, desc, type = "available") {
@@ -848,28 +828,26 @@ document.addEventListener("DOMContentLoaded", function () {
     card.innerHTML = `
       <div class="card-body">
         <h5 class="card-title">${title}</h5>
-        <p class="card-text">${desc}</p>
         ${
           type === "available"
             ? '<button class="btn btn-primary btn-sm accept-project">Accept Project</button>'
             : type === "current"
               ? '<button class="btn btn-success btn-sm complete-project">Mark as Completed</button>'
-              : `
-                  <span class="badge bg-secondary">Completed</span>
-                  <div class="rating-stars mb-2">
+              : `<span class="badge bg-secondary">Completed</span>
+                 <div class="rating-stars mb-2">
                     <span class="star" data-value="1">☆</span>
                     <span class="star" data-value="2">☆</span>
                     <span class="star" data-value="3">☆</span>
                     <span class="star" data-value="4">☆</span>
                     <span class="star" data-value="5">☆</span>
-                  </div>
-                  <button class="btn btn-primary btn-sm rate-project">Rate Project</button>
-                `
+                 </div>
+                 <button class="btn btn-primary btn-sm rate-project">Rate Project</button>`
         }
       </div>
     `;
     return card;
-  }
+}
+
 
   function checkEmptyState(container, message) {
     const existing = container.querySelector(".empty-state");
@@ -894,10 +872,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const card = createProjectCard(project.title, project.description, "available");
       availableProjectsContainer.appendChild(card);
     });
-    checkEmptyState(availableProjectsContainer, {
-      title: "No Available Projects",
-      description: "Client-posted projects will appear here."
-    });
+    checkEmptyState(availableProjectsContainer, { title: "No Available Projects", description: "Client-posted projects will appear here." });
   }
 
   postForm.addEventListener("submit", function (e) {
@@ -915,132 +890,82 @@ document.addEventListener("DOMContentLoaded", function () {
     const bsModal = bootstrap.Modal.getInstance(document.getElementById("postProjectModal"));
     bsModal.hide();
 
-    checkEmptyState(availableProjectsContainer, {
-      title: "No Available Projects",
-      description: "Client-posted projects will appear here."
-    });
+    checkEmptyState(availableProjectsContainer, { title: "No Available Projects", description: "Client-posted projects will appear here." });
   });
 
-  // Accept Project button logic
+  // 🚀 MetaMask Payment Integration
+  async function processPayment(receiverAddress, amount) {
+    if (!window.ethereum) {
+      alert("🚨 MetaMask is not installed! Please install it first.");
+      return null;
+    }
+
+    try {
+      const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+      const sender = accounts[0];
+
+      const transactionParameters = {
+        to: receiverAddress,
+        from: sender,
+        value: ethers.utils.parseEther(amount).toHexString(),
+      };
+
+      const txHash = await ethereum.request({
+        method: "eth_sendTransaction",
+        params: [transactionParameters],
+      });
+
+      return txHash;
+    } catch (error) {
+      console.error("Payment Error:", error);
+      return null;
+    }
+  }
+
   availableProjectsContainer.addEventListener("click", function (e) {
     if (e.target.classList.contains("accept-project")) {
       const projectCard = e.target.closest(".card");
       const title = projectCard.querySelector(".card-title").textContent;
       const desc = projectCard.querySelector(".card-text").textContent;
 
-      const newCard = createProjectCard(title, desc, "current");
-      currentWorkContainer.appendChild(newCard);
+      localStorage.setItem("selectedProjectTitle", title);
+      localStorage.setItem("selectedProjectDesc", desc);
 
-      projectCard.remove();
-
-      checkEmptyState(availableProjectsContainer, {
-        title: "No Available Projects",
-        description: "Client-posted projects will appear here."
-      });
-
-      checkEmptyState(currentWorkContainer, {
-        title: "No Ongoing Work",
-        description: "Accepted projects will show up here."
-      });
+      window.location.href = "metamask.html";
     }
   });
 
-  // Mark as Completed logic
-  currentWorkContainer.addEventListener("click", function (e) {
-    if (e.target.classList.contains("complete-project")) {
-      const projectCard = e.target.closest(".card");
-      const title = projectCard.querySelector(".card-title").textContent;
-      const desc = projectCard.querySelector(".card-text").textContent;
+  document.addEventListener("DOMContentLoaded", function () {
+    const projectTitle = localStorage.getItem("selectedProjectTitle") || "Unknown Project";
+    const projectDesc = localStorage.getItem("selectedProjectDesc") || "No description available.";
 
-      const newCard = createProjectCard(title, desc, "past");
-      pastWorkContainer.appendChild(newCard);
-
-      projectCard.remove();
-
-      checkEmptyState(currentWorkContainer, {
-        title: "No Ongoing Work",
-        description: "Accepted projects will show up here."
-      });
-
-      checkEmptyState(pastWorkContainer, {
-        title: "No Completed Projects",
-        description: "Your completed work will be shown here."
-      });
+    if (document.getElementById("projectTitle")) {
+      document.getElementById("projectTitle").textContent = projectTitle;
+      document.getElementById("projectDesc").textContent = projectDesc;
     }
-  });
 
-  // Rate Project logic for completed projects
-  pastWorkContainer.addEventListener("click", function (e) {
-    if (e.target.classList.contains("rate-project")) {
-      const projectCard = e.target.closest(".card");
-      const title = projectCard.querySelector(".card-title").textContent;
+    const payButton = document.getElementById("payButton");
+    if (payButton) {
+      payButton.addEventListener("click", async function () {
+        const clientWallet = "0xReceiverAddressHere";
+        const amountToPay = "0.01";
 
-      let selectedRating = 0;
+        const txHash = await processPayment(clientWallet, amountToPay);
 
-      // Handle star click event
-      document.querySelectorAll('.star').forEach(star => {
-        star.addEventListener('click', function () {
-          selectedRating = this.getAttribute('data-value');
-          // highlight stars
-          document.querySelectorAll('.star').forEach(s => {
-            s.textContent = s.getAttribute('data-value') <= selectedRating ? '⭐' : '☆';
-          });
-        });
+        if (txHash) {
+          alert("✅ Payment Successful! Transaction Hash: " + txHash);
+          localStorage.setItem("paymentSuccess", "true");
+          window.location.href = "index.html";
+        } else {
+          alert("❌ Payment failed or cancelled.");
+        }
       });
-
-      // Save the rating to localStorage
-      const feedbackData = {
-        project: title,
-        rating: selectedRating
-      };
-
-      let allFeedback = JSON.parse(localStorage.getItem('feedbacks')) || [];
-      allFeedback.push(feedbackData);
-      localStorage.setItem('feedbacks', JSON.stringify(allFeedback));
-
-      alert("Thank you for your rating!");
-
-      // Optionally, hide the rating buttons after submission
-      e.target.setAttribute('disabled', 'true');
     }
   });
 
   renderAvailableProjects();
 });
-// Modal functionality
-const feedbackBtn = document.querySelector('.feedback-btn');
-const feedbackModal = document.getElementById('feedbackModal');
-const closeModal = document.getElementById('closeModal');
-const submitFeedback = document.getElementById('submitFeedback');
-const feedbackText = document.getElementById('feedbackText');
 
-// Open modal when 'Give Feedback' button is clicked
-feedbackBtn.addEventListener('click', () => {
-  feedbackModal.style.display = 'block';
-});
-
-// Close modal when the close button is clicked
-closeModal.addEventListener('click', () => {
-  feedbackModal.style.display = 'none';
-});
-
-// Close modal if the user clicks anywhere outside the modal content
-window.addEventListener('click', (event) => {
-  if (event.target === feedbackModal) {
-    feedbackModal.style.display = 'none';
-  }
-});
-
-// Submit feedback and store it in localStorage
-submitFeedback.addEventListener('click', () => {
-  const feedback = feedbackText.value.trim();
-  if (feedback) {
-    localStorage.setItem('userFeedback', feedback);
-    window.location.href = 'feedback.html'; // Redirect to feedback page
-  } else {
-    alert('Please write your feedback before submitting.');
-  }
-});
   </script>
 
 
