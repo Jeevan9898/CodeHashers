@@ -828,6 +828,7 @@ document.addEventListener("DOMContentLoaded", function () {
     card.innerHTML = `
       <div class="card-body">
         <h5 class="card-title">${title}</h5>
+        <p class="card-text">${desc}</p>
         ${
           type === "available"
             ? '<button class="btn btn-primary btn-sm accept-project">Accept Project</button>'
@@ -846,8 +847,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     `;
     return card;
-}
-
+  }
 
   function checkEmptyState(container, message) {
     const existing = container.querySelector(".empty-state");
