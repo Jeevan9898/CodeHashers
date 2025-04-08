@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Freelance-by CodeHashers</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"/>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&display=swap" rel="stylesheet">
-<style>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&display=swap"
+    rel="stylesheet">
+  <style>
     .navbar {
       background-color: #fff;
       border-bottom: 1px solid #eaeaea;
@@ -33,30 +38,40 @@
     .nav-link:hover {
       color: #1dbf73;
     }
-    .navbar .nav-link, .navbar-brand {
+
+    .navbar .nav-link,
+    .navbar-brand {
       font-size: 1.46rem;
     }
 
     .combined-gradient {
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(135deg,
-    #0F172A 0%, #2563EB 20%, #8B5CF6 40%,
-    #FDE68A 60%, #FCA5A5 75%, #F472B6 85%, #C084FC 100%);
-  background-size: 400% 400%;
-  animation: combined-animate 18s ease-in-out infinite alternate;
-  color: white;
-  overflow: hidden;
-  padding: 2rem;
-  border-top-left-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-}
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(135deg,
+          #0F172A 0%, #2563EB 20%, #8B5CF6 40%,
+          #FDE68A 60%, #FCA5A5 75%, #F472B6 85%, #C084FC 100%);
+      background-size: 400% 400%;
+      animation: combined-animate 18s ease-in-out infinite alternate;
+      color: white;
+      overflow: hidden;
+      padding: 2rem;
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+    }
 
-@keyframes combined-animate {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+    @keyframes combined-animate {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
 
     .custom-input:focus,
@@ -78,38 +93,38 @@
     }
 
     .category-card {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  cursor: pointer;
-}
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      cursor: pointer;
+    }
 
-.category-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
-}
+    .category-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+    }
 
-.category-card span {
-  font-size: 40px;
-  color: #4a90e2;
-  transition: color 0.3s ease;
-}
+    .category-card span {
+      font-size: 40px;
+      color: #4a90e2;
+      transition: color 0.3s ease;
+    }
 
-.category-card:hover span {
-  color: #2a6bd6;
-}
+    .category-card:hover span {
+      color: #2a6bd6;
+    }
 
-.category-card h5 {
-  margin-top: 15px;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
+    .category-card h5 {
+      margin-top: 15px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
 
-.category-card:hover h5 {
-  color: #2a6bd6;
-}
+    .category-card:hover h5 {
+      color: #2a6bd6;
+    }
 
 
     .video-container {
@@ -131,542 +146,720 @@
     .carousel-caption {
       z-index: 2;
     }
+
     .navbar-brand {
-  font-family: 'Lilita One', cursive;
-  font-size: 2rem; /* You can increase this as needed */
-}
-.nav-link,
-  .dropdown-item .fw-semibold {
-    font-family: 'Abril Fatface', serif;
-  }
+      font-family: 'Lilita One', cursive;
+      font-size: 2rem;
+      /* You can increase this as needed */
+    }
 
-  /* Optional: Make text larger */
-  .nav-link {
-    font-size: 1.15rem;
-  }
+    .nav-link,
+    .dropdown-item .fw-semibold {
+      font-family: 'Abril Fatface', serif;
+    }
 
-  .dropdown-item .fw-semibold {
-  font-size: 20px; /* or use 1.25rem */
-  font-family: 'Abril Fatface', serif;
-}
+    /* Optional: Make text larger */
+    .nav-link {
+      font-size: 1.15rem;
+    }
 
-.dropdown-item small {
-  font-size: 16px; /* or use 1rem */
-  font-family: 'Abril Fatface', serif;
-}
-.dropdown-menu {
-  width: 500px !important;
-  min-height: 350px;
-  padding: 2rem;
-  font-size: 18px;
-}
-.dropdown-menu .dropdown-item {
-  margin-bottom: 12px;
-}
-@media (max-width: 576px) {
-  .dropdown-menu {
-    width: 100% !important;
-    min-width: 100% !important;
-    padding: 1rem;
-  }
+    .dropdown-item .fw-semibold {
+      font-size: 20px;
+      /* or use 1.25rem */
+      font-family: 'Abril Fatface', serif;
+    }
 
-  .category-card {
-    padding: 2rem !important;
-  }
-}
-.carousel-title {
-  font-size: 2rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-}
+    .dropdown-item small {
+      font-size: 16px;
+      /* or use 1rem */
+      font-family: 'Abril Fatface', serif;
+    }
 
-.cursor {
-  display: inline-block;
-  color: #dcd6f7;
-  animation: blink 0.7s steps(1) infinite;
-  font-weight: bold;
-}
+    .dropdown-menu {
+      width: 500px !important;
+      min-height: 350px;
+      padding: 2rem;
+      font-size: 18px;
+    }
 
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
+    .dropdown-menu .dropdown-item {
+      margin-bottom: 12px;
+    }
 
-.modal-backdrop.show:nth-of-type(2) {
-  z-index: 1056; /* raise second modal */
-}
-#registerModal {
-  z-index: 1057;
-}
+    @media (max-width: 576px) {
+      .dropdown-menu {
+        width: 100% !important;
+        min-width: 100% !important;
+        padding: 1rem;
+      }
 
-</style>
+      .category-card {
+        padding: 2rem !important;
+      }
+    }
 
-<!-- SIGN IN MODAL -->
-<div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body d-flex p-0 position-relative flex-row">
+    .carousel-title {
+      font-size: 2rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+    }
 
-      <!-- Left side with gradient and content -->
-<div class="col-md-4 d-flex flex-column justify-content-between text-white combined-gradient p-4" style="height: 700px; width: 500px; color: #0F172A;">
-  <div class="mt-4" style="font-family: Big Shoulders Stencil, sans-serif;">
-    <h2 class="fw-bold display-6"><u>Success starts here</u></h2>
-    <ul class="mt-4 fs-5" style="list-style: none; padding-left: 0;">
-      <li class="mb-3" style="font-size: 30px;">✓ Over 20 categories</li>
-      <li class="mb-3" style="font-size: 30px;">✓ Will Give Quality Work</li>
-      <li class="mb-3" style="font-size: 30px;">✓ Access to talent and businesses across the globe</li>
-    </ul>
-  </div>
-  <div class="text-center">
-    <img src="SignIn.avif" alt="Illustration" style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px;">
-  </div>
-</div>
+    .cursor {
+      display: inline-block;
+      color: #dcd6f7;
+      animation: blink 0.7s steps(1) infinite;
+      font-weight: bold;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .modal-backdrop.show:nth-of-type(2) {
+      z-index: 1056;
+      /* raise second modal */
+    }
+
+    #registerModal {
+      z-index: 1057;
+    }
+  </style>
+
+  <!-- SIGN IN MODAL -->
+  <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body d-flex p-0 position-relative flex-row">
+
+          <!-- Left side with gradient and content -->
+          <div class="col-md-4 d-flex flex-column justify-content-between text-white combined-gradient p-4"
+            style="height: 700px; width: 500px; color: #0F172A;">
+            <div class="mt-4" style="font-family: Big Shoulders Stencil, sans-serif;">
+              <h2 class="fw-bold display-6"><u>Success starts here</u></h2>
+              <ul class="mt-4 fs-5" style="list-style: none; padding-left: 0;">
+                <li class="mb-3" style="font-size: 30px;">✓ Over 20 categories</li>
+                <li class="mb-3" style="font-size: 30px;">✓ Will Give Quality Work</li>
+                <li class="mb-3" style="font-size: 30px;">✓ Access to talent and businesses across the globe</li>
+              </ul>
+            </div>
+            <div class="text-center">
+              <img src="SignIn.avif" alt="Illustration"
+                style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px;">
+            </div>
+          </div>
 
 
 
-       <!-- Right side form -->
-<div class="col-md-7 p-5 d-flex flex-column justify-content-center bg-dark text-white position-relative" style="font-family: 'Kanit', sans-serif;">
+          <!-- Right side form -->
+          <div class="col-md-7 p-5 d-flex flex-column justify-content-center bg-dark text-white position-relative"
+            style="font-family: 'Kanit', sans-serif;">
 
-  <!-- Close Button -->
-  <button type="button" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Close" onclick="window.location.href='index.html'" style="filter: invert(1);"></button>
+            <!-- Close Button -->
+            <button type="button" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Close"
+              onclick="window.location.href='Frontend.html'" style="filter: invert(1);"></button>
 
-  <!-- Logo + Branding -->
-  <div class="text-center mb-4 d-flex align-items-center justify-content-center gap-2">
-    <img src="CodeHashers logo.jpeg" alt="CodeHashers Logo" style="height: 50px; width: auto;">
-    <span class="fs-4 fw-bold text-white">CodeHashers</span>
-  </div>
+            <!-- Logo + Branding -->
+            <div class="text-center mb-4 d-flex align-items-center justify-content-center gap-2">
+              <img src="CodeHashers logo.jpeg" alt="CodeHashers Logo" style="height: 50px; width: auto;">
+              <span class="fs-4 fw-bold text-white">CodeHashers</span>
+            </div>
 
-  <h3 class="mb-4 text-center text-white"><u>Sign In</u></h3>
+            <h3 class="mb-4 text-center text-white"><u>Sign In</u></h3>
 
-  <form id="signInForm" class="row g-3 needs-validation" novalidate onsubmit="redirectToDashboard(event)">
+            <form id="signInForm" class="row g-3 needs-validation" novalidate onsubmit="signInUser(event)">
 
-    <div class="col-md-12">
-      <label for="signinEmail" class="form-label text-white" style="font-size: 25px;">Email</label>
-      <input type="email" class="form-control bg-dark text-white border-light" id="signinEmail" required>
-      <div class="invalid-feedback">Invalid Input</div>
-    </div>
-    <div class="col-md-12">
-      <label for="signinPassword" class="form-label text-white" style="font-size: 25px;">Password</label>
-      <input type="password" class="form-control bg-dark text-white border-light" id="signinPassword" required>
-      <div class="invalid-feedback">Invalid Input</div>
-    </div>
-    <div class="col-12">
-      <button class="btn btn-primary w-100" type="submit" style="font-size: 30px;">Submit</button>
-    </div>
+              <div class="col-md-12">
+                <label for="signinEmail" class="form-label text-white" style="font-size: 25px;">Email</label>
+                <input type="email" class="form-control bg-dark text-white border-light" id="signinEmail" required>
+                <div class="invalid-feedback">Invalid Input</div>
+              </div>
+              <div class="col-md-12">
+                <label for="signinPassword" class="form-label text-white" style="font-size: 25px;">Password</label>
+                <input type="password" class="form-control bg-dark text-white border-light" id="signinPassword"
+                  required>
+                <div class="invalid-feedback">Invalid Input</div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary w-100" type="submit" style="font-size: 30px;">Submit</button>
+              </div>
 
-    <!-- Register Link -->
-    <div class="col-12 text-center">
-      <p class="text-white mt-3" style="font-size: 30px;">
-        Don't have an account?
-        <a href="#" class="text-white text-decoration-underline" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Register</a>
-      </p>
-    </div>
-  </form>
+              <!-- Register Link -->
+              <div class="col-12 text-center">
+                <p class="text-white mt-3" style="font-size: 30px;">
+                  Don't have an account?
+                  <a href="#" class="text-white text-decoration-underline" data-bs-toggle="modal"
+                    data-bs-target="#registerModal" data-bs-dismiss="modal">Register</a>
+                </p>
+              </div>
+            </form>
 
-</div>
+          </div>
 
         </div>
       </div>
     </div>
   </div>
-</div>
+  </div>
 
-<!-- REGISTER MODAL -->
-<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body d-flex p-0 position-relative flex-row">
+  <!-- REGISTER MODAL -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body d-flex p-0 position-relative flex-row">
 
-         <!-- Left side with gradient and content -->
-         <div class="col-md-4 d-flex flex-column justify-content-between text-white combined-gradient p-4" style="height: 790px; width: 500px; color: #0F172A;">
-          <div class="mt-4" style="font-family: Big Shoulders Stencil, sans-serif;">
-            <h2 class="fw-bold display-6"><u>Success starts here</u></h2>
-            <ul class="mt-4 fs-5" style="list-style: none; padding-left: 0;">
-              <li class="mb-3" style="font-size: 30px;">✓ Over 20 categories</li>
-              <li class="mb-3" style="font-size: 30px;">✓ Will give Quality Work</li>
-              <li class="mb-3" style="font-size: 30px;">✓ Access to talent and businesses across the globe</li>
-            </ul>
-          </div>
-          <div class="text-center">
-            <img src="SignIn.avif" alt="Illustration" style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px;">
-          </div>
-        </div>
-        
-
-        <!-- Right side form -->
-        <div class="col-md-7 p-5 d-flex flex-column justify-content-center bg-dark text-white position-relative" style="font-family: 'Kanit', sans-serif;">
-
-          <!-- Close Button -->
-          <button type="button" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Close" onclick="window.location.href='index.html'" style="filter: invert(1);"></button>
-
-          <!-- Logo + Branding -->
-          <div class="text-center mb-4 d-flex align-items-center justify-content-center gap-2">
-            <img src="CodeHashers logo.jpeg" alt="CodeHashers Logo" style="height: 50px; width: auto;">
-            <span class="fs-4 fw-bold text-white">CodeHashers</span>
+          <!-- Left side with gradient and content -->
+          <div class="col-md-4 d-flex flex-column justify-content-between text-white combined-gradient p-4"
+            style="height: 790px; width: 500px; color: #0F172A;">
+            <div class="mt-4" style="font-family: Big Shoulders Stencil, sans-serif;">
+              <h2 class="fw-bold display-6"><u>Success starts here</u></h2>
+              <ul class="mt-4 fs-5" style="list-style: none; padding-left: 0;">
+                <li class="mb-3" style="font-size: 30px;">✓ Over 20 categories</li>
+                <li class="mb-3" style="font-size: 30px;">✓ Will give Quality Work</li>
+                <li class="mb-3" style="font-size: 30px;">✓ Access to talent and businesses across the globe</li>
+              </ul>
+            </div>
+            <div class="text-center">
+              <img src="SignIn.avif" alt="Illustration"
+                style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px;">
+            </div>
           </div>
 
-          <h3 class="mb-4 text-center text-white"><u>Register</u></h3>
 
-          <<form id="registerForm" class="row g-3 needs-validation" novalidate onsubmit="redirectToDashboard(event)">
+          <!-- Right side form -->
+          <div class="col-md-7 p-5 d-flex flex-column justify-content-center bg-dark text-white position-relative"
+            style="font-family: 'Kanit', sans-serif;">
 
-            <div class="col-md-6">
-              <label class="form-label text-white" style="font-size: 25px;">Full Name</label>
-              <input type="text" class="form-control bg-dark text-white border-light" required>
-              <div class="invalid-feedback">Invalid Input</div>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label text-white" style="font-size: 25px;">Age</label>
-              <input type="text" class="form-control bg-dark text-white border-light" required>
-              <div class="invalid-feedback">Invalid Input</div>
-            </div>
-            <div class="col-md-12">
-              <label class="form-label text-white" style="font-size: 25px;">Gender</label>
-              <select class="form-select bg-dark text-white border-light" required>
-                <option selected disabled value="">Select your Gender</option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Others</option>
-              </select>
-              <div class="invalid-feedback">Invalid Input</div>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label text-white" style="font-size: 25px;">Email</label>
-              <input type="email" class="form-control bg-dark text-white border-light" required>
-              <div class="invalid-feedback">Invalid Input</div>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label text-white" style="font-size: 25px;">Password</label>
-              <input type="password" class="form-control bg-dark text-white border-light" required>
-              <div class="invalid-feedback">Invalid Input</div>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label text-white" style="font-size: 25px;">Phone Number</label>
-              <input type="text" class="form-control bg-dark text-white border-light" required>
-              <div class="invalid-feedback">Invalid Input</div>
-            </div>
-            <div class="col-12">
-              <button class="btn btn-primary w-100" type="submit" style="font-size: 30px;">Register</button>
+            <!-- Close Button -->
+            <button type="button" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Close"
+              onclick="window.location.href='Frontend.html'" style="filter: invert(1);"></button>
+
+            <!-- Logo + Branding -->
+            <div class="text-center mb-4 d-flex align-items-center justify-content-center gap-2">
+              <img src="CodeHashers logo.jpeg" alt="CodeHashers Logo" style="height: 50px; width: auto;">
+              <span class="fs-4 fw-bold text-white">CodeHashers</span>
             </div>
 
-            <div class="col-12 text-center">
-              <p class="text-white mt-3" style="font-size: 30px;">
-                Already have an account?
-                <a href="#" class="text-white text-decoration-underline"
-                   data-bs-toggle="modal"
-                   data-bs-target="#signInModal"
-                   data-bs-dismiss="modal">
-                   Sign In
-                </a>
-              </p>
-            </div>
-          </form>
+            <h3 class="mb-4 text-center text-white"><u>Register</u></h3>
 
+            <form id="registerForm" class="row g-3 needs-validation" novalidate onsubmit="redirectToDashboard(event)">
+
+              <div class="col-md-6">
+                <label class="form-label text-white" style="font-size: 25px;">Full Name</label>
+                <input type="text" name="fullName" class="form-control bg-dark text-white border-light" required>
+                <div class="invalid-feedback">Invalid Input</div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label text-white" style="font-size: 25px;">Age</label>
+                <input type="text" name="age" class="form-control bg-dark text-white border-light" required>
+                <div class="invalid-feedback">Invalid Input</div>
+              </div>
+
+              <div class="col-md-12">
+                <label class="form-label text-white" style="font-size: 25px;">Gender</label>
+                <select name="gender" class="form-select bg-dark text-white border-light" required>
+                  <option selected disabled value="">Select your Gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Others</option>
+                </select>
+                <div class="invalid-feedback">Invalid Input</div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label text-white" style="font-size: 25px;">Email</label>
+                <input type="email" name="email" class="form-control bg-dark text-white border-light" required>
+                <div class="invalid-feedback">Invalid Input</div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label text-white" style="font-size: 25px;">Password</label>
+                <div class="input-group">
+                  <input type="password" id="passwordInput" name="password"
+                    class="form-control bg-dark text-white border-light" required>
+                  <button class="btn btn-outline-secondary" type="button" id="togglePassword"
+                    onclick="togglePasswordVisibility()">Show</button>
+                </div>
+                <div class="invalid-feedback">Invalid Input</div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label text-white" style="font-size: 25px;">Phone Number</label>
+                <input type="text" name="phone" class="form-control bg-dark text-white border-light" required>
+                <div class="invalid-feedback">Invalid Input</div>
+              </div>
+
+              <div class="col-12">
+                <button class="btn btn-primary w-100" type="submit" style="font-size: 30px;">Register</button>
+              </div>
+            </form>
+
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid px-4">
-    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
-      <img src="CodeHashers logo.jpeg" alt="CodeHashers Logo" style="height: 80px; width: auto;">
-      <span>CodeHashers</span>
-    </a>
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-      <ul class="navbar-nav align-items-center">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Explore Themes</a>
-          <ul class="dropdown-menu p-4" style="width: 410px;">
-            <li><a class="dropdown-item" href="#"><div class="fw-semibold fs-6">Web Development</div><small class="text-muted">Build responsive and modern websites.</small></a></li>
-            <li><a class="dropdown-item" href="#"><div class="fw-semibold fs-6">Web3 / Blockchain</div><small class="text-muted">Create decentralized apps and smart contracts.</small></a></li>
-            <li><a class="dropdown-item" href="#"><div class="fw-semibold fs-6">Game Development</div><small class="text-muted">Design and develop games across platforms.</small></a></li>
-            <li><a class="dropdown-item" href="#"><div class="fw-semibold fs-6">WordPress Development</div><small class="text-muted">Build blogs, business sites, and e-commerce with ease.</small></a></li>
-            <li><a class="dropdown-item" href="#"><div class="fw-semibold fs-6">Logo & Brand Designing</div><small class="text-muted">Craft a unique identity for your brand.</small></a></li>
-            <li><a class="dropdown-item" href="#"><div class="fw-semibold fs-6">Canva Template</div><small class="text-muted">Pre-made, customizable designs for fast editing.</small></a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-1" href="#">
-            <span class="material-symbols-outlined" style="font-size: 20px;">language</span>
-            English
-          </a>
-        </li>
-        
-        <li class="nav-item"><a class="nav-link" href="#">Become a Seller</a></li>
-        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signInModal">Sign In</a>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+        <img src="CodeHashers logo.jpeg" alt="CodeHashers Logo" style="height: 80px; width: auto;">
+        <span>CodeHashers</span>
+      </a>
 
-        
-      </ul>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Explore Themes</a>
+            <ul class="dropdown-menu p-4" style="width: 410px;">
+              <li><a class="dropdown-item" href="#">
+                  <div class="fw-semibold fs-6">Web Development</div><small class="text-muted">Build responsive and
+                    modern websites.</small>
+                </a></li>
+              <li><a class="dropdown-item" href="#">
+                  <div class="fw-semibold fs-6">Web3 / Blockchain</div><small class="text-muted">Create decentralized
+                    apps and smart contracts.</small>
+                </a></li>
+              <li><a class="dropdown-item" href="#">
+                  <div class="fw-semibold fs-6">Game Development</div><small class="text-muted">Design and develop games
+                    across platforms.</small>
+                </a></li>
+              <li><a class="dropdown-item" href="#">
+                  <div class="fw-semibold fs-6">WordPress Development</div><small class="text-muted">Build blogs,
+                    business sites, and e-commerce with ease.</small>
+                </a></li>
+              <li><a class="dropdown-item" href="#">
+                  <div class="fw-semibold fs-6">Logo & Brand Designing</div><small class="text-muted">Craft a unique
+                    identity for your brand.</small>
+                </a></li>
+              <li><a class="dropdown-item" href="#">
+                  <div class="fw-semibold fs-6">Canva Template</div><small class="text-muted">Pre-made, customizable
+                    designs for fast editing.</small>
+                </a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-1" href="#">
+              <span class="material-symbols-outlined" style="font-size: 20px;">language</span>
+              English
+            </a>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="#">Become a Seller</a></li>
+          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signInModal">Sign In</a>
+
+
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- HERO VIDEO SECTION -->
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="video-container">
-        <video autoplay muted loop playsinline preload="auto" style="width: 100%; height: 100%; object-fit: cover;">
-          <source src="Video.mp4" type="video/mp4">
-        </video>
-        <div class="carousel-caption d-flex flex-column justify-content-end align-items-start text-start mb-5 ps-5">
-          <h1 class="fw-bold mb-4 d-flex" style="color: #dcd6f7; font-size: 3rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.4); font-family: Anton,sans-serif;">
-            <span id="typing-text"></span><span class="cursor">|</span>
-          </h1>
-          
-          <form class="d-flex flex-column flex-sm-row align-items-start w-100 w-md-75" role="search">
-            <input class="form-control form-control-lg rounded-pill me-sm-2 mb-3 mb-sm-0"
-              type="search"
-              placeholder="Search for any service..."
-              aria-label="Search"
-              style="padding: 0.75rem 1.5rem; font-style: italic; font-weight: 500; border: 2px solid rgba(255, 255, 255, 0.83); background-color: rgba(255, 255, 255, 0.396); color: #eee; box-shadow: 0 0 8px rgba(255, 255, 255, 0.73); backdrop-filter: blur(6px); transition: 0.3s;"/>
-            <button class="btn btn-outline-light rounded-pill px-4"
-              type="submit"
-              style="font-weight: 600; transition: 0.3s;"
-              onmouseover="this.style.backgroundColor='#dcd6f7'; this.style.color='#000';"
-              onmouseout="this.style.backgroundColor='transparent'; this.style.color='#dcd6f7';">
-              Search
-            </button>
-          </form>
+  <!-- HERO VIDEO SECTION -->
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="video-container">
+          <video autoplay muted loop playsinline preload="auto" style="width: 100%; height: 100%; object-fit: cover;">
+            <source src="Video.mp4" type="video/mp4">
+          </video>
+          <div class="carousel-caption d-flex flex-column justify-content-end align-items-start text-start mb-5 ps-5">
+            <h1 class="fw-bold mb-4 d-flex"
+              style="color: #dcd6f7; font-size: 3rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.4); font-family: Anton,sans-serif;">
+              <span id="typing-text"></span><span class="cursor">|</span>
+            </h1>
+
+            <form class="d-flex flex-column flex-sm-row align-items-start w-100 w-md-75" role="search">
+              <input class="form-control form-control-lg rounded-pill me-sm-2 mb-3 mb-sm-0" type="search"
+                placeholder="Search for any service..." aria-label="Search"
+                style="padding: 0.75rem 1.5rem; font-style: italic; font-weight: 500; border: 2px solid rgba(255, 255, 255, 0.83); background-color: rgba(255, 255, 255, 0.396); color: #eee; box-shadow: 0 0 8px rgba(255, 255, 255, 0.73); backdrop-filter: blur(6px); transition: 0.3s;" />
+              <button class="btn btn-outline-light rounded-pill px-4" type="submit"
+                style="font-weight: 600; transition: 0.3s;"
+                onmouseover="this.style.backgroundColor='#dcd6f7'; this.style.color='#000';"
+                onmouseout="this.style.backgroundColor='transparent'; this.style.color='#dcd6f7';">
+                Search
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- CATEGORY SECTION -->
-<div class="container py-5">
-  <h2 class="mb-5 text-center fw-bold" style="font-family: 'Calistoga', cursive; font-size: 2.5rem;">
-    <u>Explore Categories</u>
-  </h2>
-  <div class="row justify-content-center g-4 text-center">
-    
-    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-      <div class="p-4 border rounded-4 shadow-sm h-100 category-card">
-        <span class="material-symbols-outlined" style="font-size: 3.5rem;">laptop_mac</span>
-        <p class="mb-0 mt-3 fw-bold" style="font-size: 1.4rem; font-family: 'Calistoga', cursive;">
-          Programming & Tech
-        </p>
+  <!-- CATEGORY SECTION -->
+  <div class="container py-5">
+    <h2 class="mb-5 text-center fw-bold" style="font-family: 'Calistoga', cursive; font-size: 2.5rem;">
+      <u>Explore Categories</u>
+    </h2>
+    <div class="row justify-content-center g-4 text-center">
+
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="p-4 border rounded-4 shadow-sm h-100 category-card">
+          <span class="material-symbols-outlined" style="font-size: 3.5rem;">laptop_mac</span>
+          <p class="mb-0 mt-3 fw-bold" style="font-size: 1.4rem; font-family: 'Calistoga', cursive;">
+            Programming & Tech
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-      <div class="p-4 border rounded-4 shadow-sm h-100 category-card">
-        <span class="material-symbols-outlined" style="font-size: 3.5rem;">brush</span>
-        <p class="mb-0 mt-3 fw-bold" style="font-size: 1.4rem; font-family: 'Calistoga', cursive;">
-          Graphic Designing
-        </p>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="p-4 border rounded-4 shadow-sm h-100 category-card">
+          <span class="material-symbols-outlined" style="font-size: 3.5rem;">brush</span>
+          <p class="mb-0 mt-3 fw-bold" style="font-size: 1.4rem; font-family: 'Calistoga', cursive;">
+            Graphic Designing
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-      <div class="p-4 border rounded-4 shadow-sm h-100 category-card">
-        <span class="material-symbols-outlined" style="font-size: 3.5rem;">design_services</span>
-        <p class="mb-0 mt-3 fw-bold" style="font-size: 1.4rem; font-family: 'Calistoga', cursive;">
-          UI/UX Designing
-        </p>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="p-4 border rounded-4 shadow-sm h-100 category-card">
+          <span class="material-symbols-outlined" style="font-size: 3.5rem;">design_services</span>
+          <p class="mb-0 mt-3 fw-bold" style="font-size: 1.4rem; font-family: 'Calistoga', cursive;">
+            UI/UX Designing
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-      <div class="p-4 border rounded-4 shadow-sm h-100 category-card">
-        <span class="material-symbols-outlined" style="font-size: 3.5rem;">speed</span>
-        <p class="mb-0 mt-3 fw-bold" style="font-size: 1.4rem; font-family: 'Calistoga', cursive;">
-          Website Speed Optimization
-        </p>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="p-4 border rounded-4 shadow-sm h-100 category-card">
+          <span class="material-symbols-outlined" style="font-size: 3.5rem;">speed</span>
+          <p class="mb-0 mt-3 fw-bold" style="font-size: 1.4rem; font-family: 'Calistoga', cursive;">
+            Website Speed Optimization
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-      <div class="p-4 border rounded-4 shadow-sm h-100 category-card">
-        <span class="material-symbols-outlined" style="font-size: 3.5rem;">robot</span>
-        <p class="mb-0 mt-3 fw-bold" style="font-size: 1.4rem; font-family: 'Calistoga', cursive;">
-          AI & Automation
-        </p>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="p-4 border rounded-4 shadow-sm h-100 category-card">
+          <span class="material-symbols-outlined" style="font-size: 3.5rem;">robot</span>
+          <p class="mb-0 mt-3 fw-bold" style="font-size: 1.4rem; font-family: 'Calistoga', cursive;">
+            AI & Automation
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-      <div class="p-4 border rounded-4 shadow-sm h-100 category-card">
-        <span class="material-symbols-outlined" style="font-size: 3.5rem;">games</span>
-        <p class="mb-0 mt-3 fw-bold" style="font-size: 1.4rem; font-family: 'Calistoga', cursive;">
-          Game Development
-        </p>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="p-4 border rounded-4 shadow-sm h-100 category-card">
+          <span class="material-symbols-outlined" style="font-size: 3.5rem;">games</span>
+          <p class="mb-0 mt-3 fw-bold" style="font-size: 1.4rem; font-family: 'Calistoga', cursive;">
+            Game Development
+          </p>
+        </div>
       </div>
-    </div>
 
+    </div>
   </div>
-</div>
 
   <!--ABOUT-->
 
-  <section class="py-5 bg-white text-center" style="font-family: 'Cinzel', sans-serif; font-size: 1.2rem; line-height: 1.8;">
+  <section class="py-5 bg-white text-center"
+    style="font-family: 'Cinzel', sans-serif; font-size: 1.2rem; line-height: 1.8;">
     <div class="container">
       <h2 class="mb-4 display-5 fw-bold"><u>About Us</u></h2>
       <!-- Add this to your <head> if not already present -->
 
 
-<section style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; line-height: 1.8;">
-  <p class="lead text-muted" style="font-size: 1.9rem; font-weight: 700;">
-    We are CodeHashers — a platform offering expert freelance services in web development, design, blockchain, AI, and more. 
-    Whether you're building a business or a brand, we've got your back.
-  </p>
+      <section style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; line-height: 1.8;">
+        <p class="lead text-muted" style="font-size: 1.9rem; font-weight: 700;">
+          We are CodeHashers — a platform offering expert freelance services in web development, design, blockchain, AI,
+          and more.
+          Whether you're building a business or a brand, we've got your back.
+        </p>
 
-  <p style="font-size: 2.5rem; font-weight: 700;">
-    Passionate minds, creative spirits, and powerful code — we bring your ideas to life.
-  </p>
+        <p style="font-size: 2.5rem; font-weight: 700;">
+          Passionate minds, creative spirits, and powerful code — we bring your ideas to life.
+        </p>
 
-  <div class="row justify-content-center">
-    <div class="col-md-10" style="text-align: left;">
-      <ul style="list-style-type: disc; padding-left: 1.5rem; font-size: 1.7rem; color: #333; font-weight: 700;">
-        <li>
-          We are a versatile freelance collective that thrives on innovation, speed, and execution. Whether it's web development, UI/UX design, branding, or blockchain integration — we deliver top-tier digital solutions tailored to your needs.
-        </li>
+        <div class="row justify-content-center">
+          <div class="col-md-10" style="text-align: left;">
+            <ul style="list-style-type: disc; padding-left: 1.5rem; font-size: 1.7rem; color: #333; font-weight: 700;">
+              <li>
+                We are a versatile freelance collective that thrives on innovation, speed, and execution. Whether it's
+                web development, UI/UX design, branding, or blockchain integration — we deliver top-tier digital
+                solutions tailored to your needs.
+              </li>
 
-        <li>
-          Our mission is to bridge the gap between professional quality and freelance flexibility.
-        </li>
+              <li>
+                Our mission is to bridge the gap between professional quality and freelance flexibility.
+              </li>
 
-        <li>
-          Unlike traditional freelancers, we work with a collaborative team approach to ensure every project benefits from a range of expertise. From brainstorming to deployment, you’re supported every step of the way — yet you still pay freelance-friendly rates.
-        </li>
+              <li>
+                Unlike traditional freelancers, we work with a collaborative team approach to ensure every project
+                benefits from a range of expertise. From brainstorming to deployment, you’re supported every step of the
+                way — yet you still pay freelance-friendly rates.
+              </li>
 
-        <li>
-          Our services include Web & App Development, AI Tools & Automation, UI/UX Design, NFT Art, Branding, Animation, Website Speed Optimization, and much more. We don't just build websites or visuals — we build experiences that convert and engage.
-        </li>
+              <li>
+                Our services include Web & App Development, AI Tools & Automation, UI/UX Design, NFT Art, Branding,
+                Animation, Website Speed Optimization, and much more. We don't just build websites or visuals — we build
+                experiences that convert and engage.
+              </li>
 
-        <li>
-          We're here for startups, creators, solo entrepreneurs, and businesses who dare to dream big. Let's build something incredible together — your vision, our skills.
-        </li>
-      </ul>
+              <li>
+                We're here for startups, creators, solo entrepreneurs, and businesses who dare to dream big. Let's build
+                something incredible together — your vision, our skills.
+              </li>
+            </ul>
 
-      <div class="text-center mt-4">
-        <button class="btn btn-success px-4 py-2 rounded-pill shadow-sm"
-                style="font-weight: 700; font-size: 2rem;"
-                data-bs-toggle="modal" data-bs-target="#signInModal">
-          Explore Our Services
-        </button>
-      </div>
-      
-      
-    </div>
-  </div>
-</section>
+            <div class="text-center mt-4">
+              <button class="btn btn-success px-4 py-2 rounded-pill shadow-sm"
+                style="font-weight: 700; font-size: 2rem;" data-bs-toggle="modal" data-bs-target="#signInModal">
+                Explore Our Services
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<hr>
+      <hr>
 
-<!-- FOOTER -->
-<footer class="bg-white text-dark py-5" style="font-family: 'Changa', sans-serif;">
-  <div class="container text-center">
-    <p class="mb-1" style="font-size: 2.2rem; font-weight: 700;">© 2025 CodeHashers. All rights reserved.</p>
-    <p class="text-secondary" style="font-size: 1.6rem;">Made with ❤️ by CodeHashers Team</p>
-  </div>
-</footer>
+      <!-- FOOTER -->
+      <footer class="bg-white text-dark py-5" style="font-family: 'Changa', sans-serif;">
+        <div class="container text-center">
+          <p class="mb-1" style="font-size: 2.2rem; font-weight: 700;">© 2025 CodeHashers. All rights reserved.</p>
+          <p class="text-secondary" style="font-size: 1.6rem;">Made with ❤️ by CodeHashers Team</p>
+        </div>
+      </footer>
 
-<!--SIGN IN-->
-
-
-
-
-  <script>
-    const textArray = [
-      "Freelancing isn’t a job. It’s a craft.",
-
-  "Built with passion. Delivered with purpose.",
-
-"We work like a team. You pay like a freelancer.",
-
-"Driven by creativity. Defined by results.",
-
-"Not bound by office walls—powered by freedom and skill."
-    ];
-    const typingElement = document.getElementById("typing-text");
-    let textIndex = 0;
-    let charIndex = 0;
-  
-    function type() {
-      if (charIndex < textArray[textIndex].length) {
-        typingElement.textContent += textArray[textIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, 80);
-      } else {
-        setTimeout(erase, 2000);
-      }
-    }
-  
-    function erase() {
-      if (charIndex > 0) {
-        typingElement.textContent = textArray[textIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(erase, 40);
-      } else {
-        textIndex = (textIndex + 1) % textArray.length;
-        setTimeout(type, 600);
-      }
-    }
-  
-    document.addEventListener("DOMContentLoaded", () => {
-      setTimeout(type, 1000);
-    });
+      <!--SIGN IN-->
 
 
 
 
-    document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('customValidationForm');
-    const fields = form.querySelectorAll('input[required], select[required]');
+      <script>
+        const textArray = [
+          "Freelancing isn’t a job. It’s a craft.",
 
-    fields.forEach(field => {
-      field.addEventListener('blur', () => {
-        if (
-          (field.type === 'checkbox' && !field.checked) ||
-          (field.value.trim() === '')
-        ) {
-          field.classList.add('is-invalid');
-          field.classList.remove('is-valid');
-        } else {
-          field.classList.remove('is-invalid');
-          field.classList.add('is-valid');
+          "Built with passion. Delivered with purpose.",
+
+          "We work like a team. You pay like a freelancer.",
+
+          "Driven by creativity. Defined by results.",
+
+          "Not bound by office walls—powered by freedom and skill."
+        ];
+        const typingElement = document.getElementById("typing-text");
+        let textIndex = 0;
+        let charIndex = 0;
+
+        function type() {
+          if (charIndex < textArray[textIndex].length) {
+            typingElement.textContent += textArray[textIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, 80);
+          } else {
+            setTimeout(erase, 2000);
+          }
         }
-      });
-    });
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      fields.forEach(field => field.dispatchEvent(new Event('blur')));
-    });
-  });
+        function erase() {
+          if (charIndex > 0) {
+            typingElement.textContent = textArray[textIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, 40);
+          } else {
+            textIndex = (textIndex + 1) % textArray.length;
+            setTimeout(type, 600);
+          }
+        }
 
-  function openBothModals() {
-    const signInModal = new bootstrap.Modal(document.getElementById('signInModal'));
-    const registerModal = new bootstrap.Modal(document.getElementById('registerModal'));
+        document.addEventListener("DOMContentLoaded", () => {
+          setTimeout(type, 1000);
+        });
 
-    signInModal.show();
 
-    // Add slight delay before showing the second modal
-    setTimeout(() => {
-      registerModal.show();
-    }, 500); // adjust delay if needed
-  }
 
-  function redirectToDashboard(event) {
-    event.preventDefault(); // Prevent actual form submission
-    // Optional: Add form validation check here if needed
-    window.location.href = "dashboard.html";
-  }
-  </script>
-  
-  
+
+        document.addEventListener('DOMContentLoaded', () => {
+          const form = document.getElementById('customValidationForm');
+          const fields = form.querySelectorAll('input[required], select[required]');
+
+          fields.forEach(field => {
+            field.addEventListener('blur', () => {
+              if (
+                (field.type === 'checkbox' && !field.checked) ||
+                (field.value.trim() === '')
+              ) {
+                field.classList.add('is-invalid');
+                field.classList.remove('is-valid');
+              } else {
+                field.classList.remove('is-invalid');
+                field.classList.add('is-valid');
+              }
+            });
+          });
+
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            fields.forEach(field => field.dispatchEvent(new Event('blur')));
+          });
+        });
+
+        function openBothModals() {
+          const signInModal = new bootstrap.Modal(document.getElementById('signInModal'));
+          const registerModal = new bootstrap.Modal(document.getElementById('registerModal'));
+
+          signInModal.show();
+
+          // Add slight delay before showing the second modal
+          setTimeout(() => {
+            registerModal.show();
+          }, 500); // adjust delay if needed
+        }
+
+
+        async function redirectToDashboard(event) {
+          event.preventDefault();
+
+          const form = document.getElementById('registerForm');
+
+          // HTML5 + Bootstrap validation
+          if (!form.checkValidity()) {
+            form.classList.add('was-validated');
+            return;
+          }
+
+          const formData = new FormData(event.target);
+          const data = Object.fromEntries(formData.entries());
+
+          // Trim all string fields
+          for (let key in data) {
+            if (typeof data[key] === 'string') {
+              data[key] = data[key].trim();
+            }
+          }
+
+          // Individual field validation
+          if (!data.fullName) {
+            alert("Full Name is required.");
+            return;
+          }
+
+          if (!data.age) {
+            alert("Age is required.");
+            return;
+          }
+
+          const age = parseInt(data.age);
+          if (isNaN(age) || age <= 0) {
+            alert("Age must be a valid positive number.");
+            return;
+          }
+
+          if (!data.gender) {
+            alert("Gender is required.");
+            return;
+          }
+
+          if (!data.email) {
+            alert("Email is required.");
+            return;
+          }
+
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(data.email)) {
+            alert("Invalid email format.");
+            return;
+          }
+
+          if (!data.password) {
+            alert("Password is required.");
+            return;
+          }
+
+          if (data.password.length < 6) {
+            alert("Password must be at least 6 characters long.");
+            return;
+          }
+
+          if (!data.phone) {
+            alert("Phone number is required.");
+            return;
+          }
+
+          const phonePattern = /^\d{10}$/;
+          if (!phonePattern.test(data.phone)) {
+            alert("Phone number must be 10 digits.");
+            return;
+          }
+
+          // Send data to backend
+          try {
+            const response = await fetch('http://localhost:3000/register', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+              window.location.href = "dashboard.html";
+            } else {
+              const errorData = await response.json();
+              console.error('Registration failed:', errorData.errors || errorData.message);
+              alert('Registration failed: ' + (errorData.errors?.map(err => err.msg).join(', ') || errorData.message));
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            alert('Something went wrong. Please try again.');
+          }
+        }
+
+        // Optional: Toggle password visibility
+        function togglePasswordVisibility() {
+          const input = document.getElementById("passwordInput");
+          const toggle = document.getElementById("togglePassword");
+          const isPassword = input.type === "password";
+          input.type = isPassword ? "text" : "password";
+          toggle.textContent = isPassword ? "Hide" : "Show";
+        }
+
+        async function signInUser(event) {
+          event.preventDefault();
+
+          const email = document.getElementById('signinEmail').value.trim();
+          const password = document.getElementById('signinPassword').value;
+
+          if (!email || !password) {
+            alert('Please enter both email and password.');
+            return;
+          }
+
+          try {
+            const response = await fetch('http://localhost:3000/signin', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ email, password }),
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+              // ✅ Redirect to dashboard on success
+              window.location.href = 'dashboard.html';
+            } else {
+              alert(result.message || 'Invalid email or password');
+            }
+          } catch (error) {
+            console.error('Sign-in failed:', error);
+            alert('Something went wrong. Please try again later.');
+          }
+        }
+
+      </script>
 </body>
+
 </html>
