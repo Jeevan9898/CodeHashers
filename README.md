@@ -30,3 +30,11 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md)
 
 ## 📄 License
 Licensed under the MIT License. See [`LICENSE`](LICENSE) for details.
+
+## Note
+🧩 This project is currently participating in:
+- 🏁 **OSCI 2025** (Open Source Community India) – Aug 5–10, 2025
+- 🚀 **GSSoC 2025** (GirlScript Summer of Code) – Long-term open source contribution program
+
+We welcome contributors from both programs! Please check labels like `gssoc` or `osci` when submitting your PR.
+
