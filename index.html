@@ -227,27 +227,6 @@
       z-index: 1057;
     }
 
-    /* Scroll-to-Top Button Styles */
-    #scrollToTopBtn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      display: none;
-      z-index: 100;
-      font-size: 30px;
-      padding: 15px 30px;
-      border: none;
-      background-color: #333;
-      color: white;
-      cursor: pointer;
-      border-radius: 70px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      transition: opacity 0.3s ease;
-    }
-
-    #scrollToTopBtn:hover {
-      background-color: #777676;
-    }
   </style>
 
   <!-- SIGN IN MODAL -->
@@ -655,7 +634,7 @@
 
       <!--SIGN IN-->
 
-      <button id="scrollToTopBtn" title="Go to top">↑</button>
+      
 
 
       <script>
@@ -880,23 +859,7 @@
             alert('Something went wrong. Please try again later.');
           }
         }
-        // adding functionality to the button 
-        const scrollBtn = document.getElementById("scrollToTopBtn");
-        window.addEventListener('scroll', () => {
-          if (document.documentElement.scrollTop > 200) {
-            scrollBtn.style.display = 'block';
-          } else {
-            scrollBtn.style.display = 'none';
-          }
-        });
-
-        // Smooth scroll to top on click
-        scrollBtn.addEventListener('click', () => {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-        });
+        
       </script>
 </body>
 
