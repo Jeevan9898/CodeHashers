@@ -226,6 +226,27 @@
     #registerModal {
       z-index: 1057;
     }
+
+    #scrollToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: none;
+      z-index: 100;
+      font-size: 18px;
+      padding: 15px 25px;
+      border: none;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+      border-radius: 50px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      transition: opacity 0.3s ease;
+    }
+
+    #scrollToTopBtn:hover {
+      background-color: #555;
+    }
   </style>
 
   <!-- SIGN IN MODAL -->
@@ -623,6 +644,7 @@
 
       <hr>
 
+      <button id="scrollToTopBtn" title="Go to top">↑</button>
       <!-- FOOTER -->
       <footer class="bg-white text-dark py-5" style="font-family: 'Changa', sans-serif;">
         <div class="container text-center">
@@ -859,6 +881,25 @@
           }
         }
 
+        // Adding new functionality 
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+
+        // Show/hide the button after 200px scroll
+        window.addEventListener('scroll', () => {
+          if (document.documentElement.scrollTop > 200) {
+            scrollBtn.style.display = 'block';
+          } else {
+            scrollBtn.style.display = 'none';
+          }
+        });
+
+        // Smooth scroll to top on click
+        scrollBtn.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
       </script>
 </body>
 
